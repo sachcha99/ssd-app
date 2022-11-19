@@ -13,7 +13,7 @@ const AdminDashboard = () => {
             <div className="p-4 lg:w-3/4 md:w-full">
               <Link to="/admin/register">
                 <div className="flex border-2 rounded-lg hover:bg-slate-100 border-gray-200 border-opacity-50 p-8 sm:flex-row flex-col items-center justify-between">
-                  <div className="w-16 h-16 sm:mr-8 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 flex-shrink-0">
+                  <div className="w-16 h-16 sm:mr-8 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full bg-green-100 text-green-500 flex-shrink-0">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -30,7 +30,7 @@ const AdminDashboard = () => {
                     </svg>
                   </div>
                   <div className="">
-                    <div className="text-indigo-500 inline-flex items-center whitespace-nowrap">
+                    <div className="text-green-500 inline-flex items-center whitespace-nowrap">
                       Register User
                       <svg
                         fill="none"
@@ -51,7 +51,7 @@ const AdminDashboard = () => {
             <div className="p-4 lg:w-3/4 md:w-full">
               <Link to="/admin/users">
                 <div className="flex border-2 rounded-lg hover:bg-slate-100 border-gray-200 border-opacity-50 p-8 sm:flex-row flex-col items-center justify-between">
-                  <div className="w-16 h-16 sm:mr-8 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 flex-shrink-0">
+                  <div className="w-16 h-16 sm:mr-8 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full bg-green-100 text-green-500 flex-shrink-0">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -68,7 +68,7 @@ const AdminDashboard = () => {
                     </svg>
                   </div>
                   <div className="">
-                    <div className="text-indigo-500 inline-flex items-center">
+                    <div className="text-green-500 inline-flex items-center">
                       View Users
                       <svg
                         fill="none"

@@ -9,37 +9,37 @@ const FileUploader = () => {
   const [fileName, setFileName] = useState("Drop files here");
   const [buttonStatus, setButtonStatus] = useState(false);
 
-  const fileHandler = (e) =>{
+  const fileHandler = (e) => {
     const selectedFile = e.target.files[0];
-		setFile(selectedFile);
+    setFile(selectedFile);
     setFileName(selectedFile.name)
   }
 
-  
+
 
   const fileUpload = async (e) => {
     e.preventDefault();
-		if (File) {
+    if (File) {
       console.log(File);
-			var formData = new FormData();
-			formData.append("file", File);
+      var formData = new FormData();
+      formData.append("file", File);
 
       try {
-      await axios.post("/file/upload", formData);
-      setButtonStatus(false);
-      setFile(null);
-      setFileName("Drop files here")
-    } catch (err) {
-      setError(err.response.data.message);
-      setButtonStatus(false);
-    }
+        await axios.post("/file/upload", formData);
+        setButtonStatus(false);
+        setFile(null);
+        setFileName("Drop files here")
+      } catch (err) {
+        setError(err.response.data.message);
+        setButtonStatus(false);
+      }
 
     }
   }
 
   return (
     <div>
-    <Header/>
+      <Header />
       <div class="mx-auto w-full max-w-[550px] bg-white">
         {error && <p className="text-red-500 text-sm text-center">{error}</p>}
         <form
@@ -53,7 +53,7 @@ const FileUploader = () => {
             </label>
 
             <div class="mb-8">
-              <input type="file" name="file" id="file" class="sr-only" onChange={fileHandler}/>
+              <input type="file" name="file" id="file" class="sr-only" onChange={fileHandler} />
               <label
                 for="file"
                 class="relative flex min-h-[200px] items-center justify-center rounded-md border border-dashed border-[#e0e0e0] p-12 text-center"
@@ -74,7 +74,7 @@ const FileUploader = () => {
           </div>
 
           <div>
-            <button onClick={fileUpload} class="hover:shadow-form w-full rounded-md bg-[#6A64F1] py-3 px-8 text-center text-base font-semibold text-white outline-none">
+            <button onClick={fileUpload} class="hover:shadow-form w-full rounded-md bg-[#05aa37] py-3 px-8 text-center text-base font-semibold text-white outline-none">
               Send File
             </button>
           </div>

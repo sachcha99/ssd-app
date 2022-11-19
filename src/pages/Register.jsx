@@ -17,6 +17,7 @@ const Register = () => {
   const token = localStorage.getItem('token');
 
   const registerUser = async (e) => {
+    if(user.name && user.email && user.username && user.role){
     e.preventDefault();
     setButtonStatus(true);
     setError('');
@@ -40,8 +41,20 @@ const Register = () => {
       setButtonStatus(false);
       setUser({ name: '', email: '', username: '', role: '' });
     } catch (err) {
-      setError(err.response.data.message);
+      setError(err.response);
       setButtonStatus(false);
+    }}
+    else{
+      toast.error('Please Fill all the fields', {
+        position: 'top-center',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'colored',
+      });
     }
   };
 
@@ -61,7 +74,7 @@ const Register = () => {
                 type="text"
                 id="name"
                 name="name"
-                className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                className="w-full bg-white rounded border border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                 value={user.name}
                 onChange={(e) => setUser({ ...user, name: e.target.value })}
               />
@@ -74,7 +87,7 @@ const Register = () => {
                 type="email"
                 id="email"
                 name="email"
-                className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                className="w-full bg-white rounded border border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                 value={user.email}
                 onChange={(e) => setUser({ ...user, email: e.target.value })}
               />
@@ -87,7 +100,7 @@ const Register = () => {
                 type="text"
                 id="username"
                 name="username"
-                className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                className="w-full bg-white rounded border border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                 value={user.username}
                 onChange={(e) => setUser({ ...user, username: e.target.value })}
               />
@@ -98,7 +111,7 @@ const Register = () => {
                 <div className="flex">
                   <div className="form-check mr-8">
                     <input
-                      className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-indigo-600 checked:border-indigo-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                      className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-green-600 checked:border-green-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
                       type="radio"
                       name="flexRadioDefault"
                       id="flexRadioDefault1"
@@ -111,7 +124,7 @@ const Register = () => {
                   </div>
                   <div className="form-check">
                     <input
-                      className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-indigo-600 checked:border-indigo-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                      className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-green-600 checked:border-green-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
                       type="radio"
                       name="flexRadioDefault"
                       id="flexRadioDefault2"
@@ -126,8 +139,8 @@ const Register = () => {
               </div>
             </div>
             <button
-              className="text-white bg-indigo-500 border-0 py-2 px-8 my-2 focus:outline-none hover:bg-indigo-600 rounded text-lg"
-              onClick={registerUser}
+              className="text-white bg-green-500 border-0 py-2 px-8 my-2 focus:outline-none hover:bg-green-600 rounded text-lg"
+              onClick={(e)=>{registerUser(e)}}
               disabled={buttonStatus}
             >
               {buttonStatus ? 'Registering...' : 'Register'}

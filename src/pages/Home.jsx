@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import Header from '../components/Header';
-import CTAImage from './../assets/cta-img.png';
+import CTAImage from './../assets/cta-img.gif';
 
 const Home = () => {
 
@@ -15,14 +15,10 @@ const Home = () => {
             <h1 className="sm:text-5xl text-3xl mb-4 font-bold text-gray-900 max-w-[750px]">
               Upload Your Files and Messages in One Place
             </h1>
-            <p className="mb-8 leading-relaxed">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius sunt dolor nesciunt consectetur perspiciatis
-              quia saepe delectus ab et beatae.
-            </p>
             <div className="flex justify-center">
               {
                 <Link to="/login">
-                  <button className="inline-flex items-center bg-indigo-500 border-0 py-2 px-4 focus:outline-none text-white hover:bg-indigo-600 rounded text-base md:mt-0">
+                  <button className="inline-flex items-center bg-green-600 border-0 py-2 px-4 focus:outline-none text-white hover:bg-green-700 rounded text-base md:mt-0">
                     Login
                     <svg
                       fill="none"

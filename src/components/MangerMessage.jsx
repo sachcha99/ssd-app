@@ -21,7 +21,7 @@ const ManagerMessage = () => {
             token: token,
           },
         }
-      );   toast.success("Successfully Save Message!", {
+      ); toast.success("Successfully Save Message!", {
         position: "top-center",
         autoClose: 5000,
         hideProgressBar: false,
@@ -60,16 +60,16 @@ const ManagerMessage = () => {
                 value={message}
                 placeholder="Type your message"
                 class="w-full resize-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 
-                text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                text-base font-medium text-[#6B7280] outline-none focus:border-[#05aa37] focus:shadow-md"
                 onChange={(e) => setMessage(e.target.value)}
               ></textarea>
             </div>
             <div>
               <button class="group relative h-12 w-48 overflow-hidden rounded-lg bg-white text-lg shadow">
-                <div class="absolute inset-0 w-3 bg-[#6A64F1] transition-all duration-[250ms] ease-out group-hover:w-full"></div>
+                <div class="absolute inset-0 w-3 bg-[#05aa37] transition-all duration-[250ms] ease-out group-hover:w-full"></div>
                 <span
                   class="relative text-black group-hover:text-white"
-                  onClick={(e)=> saveMessage(e)}
+                  onClick={(e) => saveMessage(e)}
                   disabled={buttonStatus}
                 >
                   {buttonStatus ? "Saving..." : "Save"}

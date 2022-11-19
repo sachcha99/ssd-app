@@ -9,7 +9,7 @@ const ManagerHome = () => {
           <div class="flex flex-wrap -m-4">
             <div class="p-4 lg:w-1/2 md:w-full">
               <div class="flex border-2 rounded-lg border-gray-200 border-opacity-50 p-8 sm:flex-row flex-col">
-                <div class="w-16 h-16 sm:mr-8 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 flex-shrink-0">
+                <div class="w-16 h-16 sm:mr-8 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full bg-green-100 text-green-500 flex-shrink-0">
                   <svg
                     fill="none"
                     stroke="currentColor"
@@ -25,7 +25,7 @@ const ManagerHome = () => {
                 <div class="flex-grow">
                   <Link
                     to="/manager/message"
-                    class="mt-3 text-indigo-500 inline-flex items-center"
+                    class="mt-3 text-green-500 inline-flex items-center"
                   >
                     Save Message
                     <svg
@@ -45,7 +45,7 @@ const ManagerHome = () => {
             </div>
             <div class="p-4 lg:w-1/2 md:w-full">
               <div class="flex border-2 rounded-lg border-gray-200 border-opacity-50 p-8 sm:flex-row flex-col">
-                <div class="w-16 h-16 sm:mr-8 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 flex-shrink-0">
+                <div class="w-16 h-16 sm:mr-8 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full bg-green-100 text-green-500 flex-shrink-0">
                   <svg
                     fill="none"
                     stroke="currentColor"
@@ -62,7 +62,7 @@ const ManagerHome = () => {
                 <div class="flex-grow">
                   <Link
                     to="/file-uploader"
-                    class="mt-3 text-indigo-500 inline-flex items-center"
+                    class="mt-3 text-green-500 inline-flex items-center"
                   >
                     File Upload
                     <svg
