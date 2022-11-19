@@ -8,6 +8,7 @@ const FileUploader = () => {
   const [error, setError] = useState("");
   const [fileName, setFileName] = useState("Drop files here");
   const [buttonStatus, setButtonStatus] = useState(false);
+  const token = localStorage.getItem('token');
 
   const fileHandler = (e) => {
     const selectedFile = e.target.files[0];
@@ -25,7 +26,11 @@ const FileUploader = () => {
       formData.append("file", File);
 
       try {
-        await axios.post("/file/upload", formData);
+        await axios.post("/file/upload", formData, {
+          headers: {
+            token: token,
+          },
+        });
         setButtonStatus(false);
         setFile(null);
         setFileName("Drop files here")
@@ -74,7 +79,7 @@ const FileUploader = () => {
           </div>
 
           <div>
-            <button onClick={fileUpload} class="hover:shadow-form w-full rounded-md bg-[#05aa37] py-3 px-8 text-center text-base font-semibold text-white outline-none">
+            <button onClick={(e)=>fileUpload(e)} class="hover:shadow-form w-full rounded-md bg-[#05aa37] py-3 px-8 text-center text-base font-semibold text-white outline-none">
               Send File
             </button>
           </div>
